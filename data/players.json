@@ -1,0 +1,29 @@
+ [
+    {
+        "id": "wdasdads2", 
+        "name": "Ronaldo",
+        "qualification": 4, 
+        "position": "csatar", 
+        "club": "Fradi", 
+        "age": 22, 
+        "nationality": "Brazil"
+    },
+    {
+        "id": "123123qwsdas", 
+        "name": "Messi",
+        "qualification": 7, 
+        "position": "kapus", 
+        "club": "Barcelona", 
+        "age": 66, 
+        "nationality": "Magyar"
+    },
+    {
+        "id": "wdasdasdasf12ads2", 
+        "name": "Ocskos",
+        "qualification": 2, 
+        "position": "hátvéd", 
+        "club": "RealMadrid", 
+        "age": 12, 
+        "nationality": "Japán"
+    }
+]
