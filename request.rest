@@ -2,10 +2,10 @@
 get http://localhost:3000/players
 
 ### read by id
-get http://localhost:3000/players/wdasdads2
+get http://localhost:3000/players/123123qwsdas
 
 ### delete
-delete http://localhost:3000/players/wdasdads2
+delete http://localhost:3000/players/54mf244klbkja2bg
 
 ### post
 post http://localhost:3000/players
@@ -21,7 +21,7 @@ Content-Type: application/json
 }
 
 ### put
-put http://localhost:3000/players/wdasdads2
+put http://localhost:3000/players/123123qwsdas
 Content-Type: application/json
 
 {
