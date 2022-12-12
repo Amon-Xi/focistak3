@@ -3,14 +3,15 @@ const fs = require("fs");
 const bodyParser = require("body-parser")
 const uniqid = require('uniqid'); 
 const sanitizeHtml = require('sanitize-html');
+const { runInNewContext } = require('vm');
 
-const dataFile = "./data/products.json";
+const dataFile = "./data/players.json";
 const port = 3000
 
 const app = express()
 
 //get product by id
-app.get('/products/:id', function (req, res) {
+app.get('/players/:id', function (req, res) {
     let id = req.params.id;
 
     //beolvassuk az összes adatot: json -> obj
@@ -34,16 +35,17 @@ app.get('/products/:id', function (req, res) {
 })
 
 //get products
-app.get('/products', function (req, res) {
+app.get('/players', function (req, res) {
     fs.readFile(dataFile, (error, data)=>{
-        let products = data;
-        res.send(products);
+        let players = data;
+        console.log(data);
+        res.send(players);
     });
 })
 
 
 //delete product by id
-app.delete('/products/:id', function (req, res) {
+app.delete('/players/:id', function (req, res) {
     let id = req.params.id;
 
     //beolvassuk az összes adatot: json -> obj
@@ -115,13 +117,16 @@ app.put('/products/:id', bodyParser.json(),function (req, res) {
 })
 
 //post
-app.post('/products',bodyParser.json(), function (req, res) {
+app.post('/players',bodyParser.json(), function (req, res) {
     let newProduct = {
         id: uniqid(), 
         name: sanitizeHtml(req.body.name),
-        quantity: req.body.quantity,
-        price: req.body.price,
-        type: sanitizeHtml(req.body.type)
+        qualification: req.body.qualification,
+        position: req.body.position,
+        club: sanitizeHtml(req.body.club),
+        age: req.body.age,
+        nationality: req.body.nationality
+
     }
 
     
